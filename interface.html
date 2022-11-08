@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="input">Введите имя</label><input class="first-name" id="first-name" type="text" value="" required><br>
+    <label for="input">Введите отчество</label><input class="middle-name" id="middle-name" type="text" value="" required><br>
+    <label for="input">Введите фамилию</label><input class="last-name" id="last-name" type="text" value="" required>
+    <button onclick="func()">Отправить!</button>
+    <div id="result"></div>
+    
+
+    <script>
+
+
+function func() { 
+
+let firstName = document.getElementById("first-name").value;
+firstName = firstName .trim() .toLowerCase();
+let newFirstName = firstName[0].toUpperCase() + firstName.slice(1);
+
+let middleName = document.getElementById("middle-name").value;
+middleName = middleName .trim() .toLowerCase();
+let newMiddleName = middleName[0].toUpperCase() + middleName.slice(1);
+
+let lastName = document.getElementById("last-name").value;
+lastName = lastName .trim() .toLowerCase();;
+let newLastName = lastName[0].toUpperCase() + lastName.slice(1);
+
+let name = "Вас зовут " + newFirstName+ " " + newMiddleName + " " + newLastName;
+
+let result = document.getElementById ("result");
+result.innerHTML = name;
+}
+
+    </script>
+</body>
+</html>
