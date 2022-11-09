@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="generateNumbers()">
+      Сгенерировать 10 случайных чисел
+    </button>
+    <div id="numbers"></div>
+    <button onclick="getMaxOfArray(numbers)">Найти максимальное число</button>
+    <div id="maxnumber"></div>
+    <button onclick="getMinOfArray(numbers)">Найти минимальное число</button>
+    <div id="minnumber"></div>
+    <button onclick="arraySum(numbers)">Вычислить сумму</button>
+    <div id="sum"></div>
+    <button onclick="arrayMultiply(numbers)">Вычислить произведение</button>
+    <div id="multiply"></div>
+
+    <script>
+      let numbers = [];
+
+      function generateNumbers() {
+        for (let i = 0; i < 10; i++) {
+          numbers.push(Math.round(Math.random() * (10 - -10) + -10));
+        }
+        document.getElementById("numbers").innerHTML = "<br>" + numbers;
+      }
+
+      document.getElementById("numbers").innerHTML = "";
+      function getMaxOfArray(numbers) {
+        document.getElementById("maxnumber").innerHTML = Math.max.apply(
+          null,
+          numbers
+        );
+      }
+
+      function getMinOfArray(numbers) {
+        document.getElementById("minnumber").innerHTML = Math.min.apply(
+          null,
+          numbers
+        );
+      }
+
+      function arraySum(numbers) {
+        let sum = 0;
+        for (let i = 0; i < numbers.length; i++) {
+          sum += numbers[i];
+        }
+        document.getElementById("sum").innerHTML = sum;
+      }
+
+      function arrayMultiply(numbers) {
+        let multiply = 0;
+        for (let i = 0; i < numbers.length; i++) {
+          multiply = multiply * numbers[i];
+        }
+        document.getElementById("multiply").innerHTML = multiply;
+      }
+    </script>
+  </body>
+</html>
